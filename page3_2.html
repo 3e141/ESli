@@ -9,35 +9,59 @@
 
     <style>
         form {
-            max-width: 400px; 
+            max-width: 400px;
             margin: 20px auto;
             padding: 20px;
             background-color: #f9f9f9;
             border: 1px solid #ccc;
             border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        
+
+        /* Style for all labels */
         label {
+            display: block;
             margin: 10px 0 5px;
+            font-size: 1rem;
             color: #333;
         }
 
-        input {
+        /* Style for text inputs, date, tel, password, and number fields */
+        input[type="text"],
+        input[type="date"],
+        input[type="tel"],
+        input[type="password"],
+        input[type="number"] {
             width: 100%;
             padding: 8px;
             margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 4px;
+            box-sizing: border-box;
         }
-        
+
+        /* Style for radio and checkbox inputs */
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        /* Style the submit button */
         input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
             background-color: #4CAF50;
             color: white;
+            font-size: 1rem;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
-        
+
+        /* Hover effect for the submit button */
         input[type="submit"]:hover {
-            background-color: #45a049; 
+            background-color: #45a049;
         }
     </style>
 </head>
