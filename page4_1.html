@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+    <meta charset="UTF-8"/>
+    <title>E. Śliwka Lab4.S1</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	
+    <style>
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        #display {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            text-align: right;
+            font-size: 20px;
+        }
+
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .button {
+            padding: 10px;
+            font-size: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #F5F5DC;
+        }
+
+        .button:hover {
+            background-color: #E0D9B5;
+        }
+    </style>
+</head>
+<body>
+
+    <form>
+        <input type="text" id="display" placeholder="0" readonly>
+        
+        <div class="button-container">
+            <button type="button" class="button" onclick="addC('1')">1</button>
+            <button type="button" class="button" onclick="addC('2')">2</button>
+            <button type="button" class="button" onclick="addC('3')">3</button>
+            <button type="button" class="button" onclick="addCF('+')">+</button>
+
+            <button type="button" class="button" onclick="addC('4')">4</button>
+            <button type="button" class="button" onclick="addC('5')">5</button>
+            <button type="button" class="button" onclick="addC('6')">6</button>
+            <button type="button" class="button" onclick="addCF('-')">-</button>
+
+            <button type="button" class="button" onclick="addC('7')">7</button>
+            <button type="button" class="button" onclick="addC('8')">8</button>
+            <button type="button" class="button" onclick="addC('9')">9</button>
+            <button type="button" class="button" onclick="addCF('*')">*</button>
+
+            <button type="button" class="button" onclick="addC('0')">0</button>
+            <button type="button" class="button" onclick="clearC()">C</button>
+            <button type="button" class="button" onclick="calcC()">=</button>
+            <button type="button" class="button" onclick="addCF('/')">/</button>
+        </div>
+    </form>
+
+    <script>
+        function addC(value) {
+            const display = document.getElementById('display');
+            if (display.value === '0') {
+                display.value = value;
+            } else {
+                display.value += value;
+            }
+        }
+		
+		function addCF(value) {
+            const display = document.getElementById('display');
+            const last = display.value[display.value.length - 1];
+            if (['*', '/', '+', '-'].includes(last)) {
+				display.value = display.value.slice(0, -1) + value;
+            } else {
+                display.value += value;
+            }
+        }
+
+        function clearC() {
+            document.getElementById('display').value = '0';
+        }
+
+        function calcC() {
+            const display = document.getElementById('display');
+            try {
+                display.value = eval(display.value);
+            } catch (error) {
+                display.value = "Error";
+            }
+        }
+    </script>
+
+</body>
+</html>
