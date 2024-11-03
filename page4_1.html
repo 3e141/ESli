@@ -85,11 +85,11 @@
             }
         }
 		
-		function addCF(value) {
+	function addCF(value) {
             const display = document.getElementById('display');
             const last = display.value[display.value.length - 1];
             if (['*', '/', '+', '-'].includes(last)) {
-				display.value = display.value.slice(0, -1) + value;
+		display.value = display.value.slice(0, -1) + value;
             } else {
                 display.value += value;
             }
