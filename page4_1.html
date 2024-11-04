@@ -70,9 +70,10 @@
 
             <button type="button" class="button" onclick="addC('0')">0</button>
             <button type="button" class="button" onclick="clearC()">C</button>
-            <button type="button" class="button" onclick="calcC()">=</button>
+            <button type="button" class="button" onclick="addCF('.')">.</button>
             <button type="button" class="button" onclick="addCF('/')">/</button>
-        </div>
+            <button type="button" class="button" onclick="calcC()">=</button>
+	</div>
     </form>
 
     <script>
@@ -88,7 +89,7 @@
 	function addCF(value) {
             const display = document.getElementById('display');
             const last = display.value[display.value.length - 1];
-            if (['*', '/', '+', '-'].includes(last)) {
+            if (['*', '/', '+', '-', '.'].includes(last)) {
 		display.value = display.value.slice(0, -1) + value;
             } else {
                 display.value += value;
