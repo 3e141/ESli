@@ -141,11 +141,12 @@
                 }
             });            
 
-	    if (!(p9.value == 'M') || !(p9.value == 'K')){
-		    e9.textContent = "To pole jest wymagane"
+	    if (!(M.value === "M") && !(K.value === "K")){
+		    e9.textContent = "To pole jest wymagane";
+		    sbForm = false;
 	    }
             if (sbForm) {
-		form.submit()
+		form.submit();
             }
         });
     </script>
