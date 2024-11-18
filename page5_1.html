@@ -44,19 +44,12 @@
             background-color: #45a049;
         }
 
-        .error-message {
-            color: red;
-            font-size: 0.85em;
-            margin-bottom: 10px;
-        }
-
         .error-border {
             border-color: red;
         }
 
         .error {
             color: red;
-            font-size: 0.85em;
         }
     </style>
 </head>
@@ -134,7 +127,7 @@
 
             fields.forEach(field => {
                 const error = document.getElementById('e' + field.name);
-                if (!field.value) {
+                if (!field.value && field.required) {
                     sbForm = false;
                     field.classList.add('error-border');
                     error.textContent = "To pole jest wymagane.";
@@ -147,7 +140,10 @@
                     error.textContent = '';
                 }
             });            
-			
+
+	    if (!(p9.value == 'M') || !(p9.value == 'K')){
+		    e9.textContent = "To pole jest wymagane"
+	    }
             if (sbForm) {
 		form.submit()
             }
