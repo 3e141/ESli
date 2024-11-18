@@ -130,7 +130,7 @@
                 if (!field.value && field.required) {
                     sbForm = false;
                     field.classList.add('error-border');
-                    error.textContent = p9.title;
+                    error.textContent = "To pole jest wymagane.";
                 }else if (!field.checkValidity()){
 		    sbForm = false;
                     field.classList.add('error-border');
@@ -142,7 +142,7 @@
             });            
 
 	    if (!(M.value === "M") && !(K.value === "K")){
-		    ep9.textContent = "To pole jest wymagane";
+		    ep9.textContent = "To pole jest wymagane.";
 	    }
             if (sbForm) {
 		form.submit();
