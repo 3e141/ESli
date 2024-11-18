@@ -134,11 +134,15 @@
 
             fields.forEach(field => {
                 const error = document.getElementById('e' + field.name);
-                if (!field.checkValidity()) {
+                if (!field) {
                     isValid = false;
                     field.classList.add('error-border');
+                    error.textContent = "To pole jest wymagane.";
+                }else if (!field.checkValidity()){
+		    isValid = false;
+                    field.classList.add('error-border');
                     error.textContent = field.title;
-                } else {
+		}else {
                     field.classList.remove('error-border');
                     error.textContent = '';
                 }
