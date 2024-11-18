@@ -134,7 +134,7 @@
 
             fields.forEach(field => {
                 const error = document.getElementById('e' + field.name);
-                if (!field) {
+                if (!field.value) {
                     sbForm = false;
                     field.classList.add('error-border');
                     error.textContent = "To pole jest wymagane.";
