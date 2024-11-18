@@ -69,9 +69,9 @@
 
         <label for="p9">Płeć:</label>
         <label for="K">Kobieta:</label>
-        <input type="radio" id="K" name="p9" value="K" required>
+        <input type="radio" id="K" name="p9" value="K" title = "To pole jest wymagane." required>
         <label for="M">Mężczyzna:</label>
-        <input type="radio" id="M" name="p9" value="M" required>
+        <input type="radio" id="M" name="p9" value="M" title = "To pole jest wymagane." required>
         <div class="error" id="ep9"></div>
 
         <label for="p6">Data urodzenia:</label>
@@ -130,7 +130,7 @@
                 if (!field.value && field.required) {
                     sbForm = false;
                     field.classList.add('error-border');
-                    error.textContent = "To pole jest wymagane.";
+                    error.textContent = p9.title;
                 }else if (!field.checkValidity()){
 		    sbForm = false;
                     field.classList.add('error-border');
